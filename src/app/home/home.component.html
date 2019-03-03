@@ -1,0 +1,12 @@
+<div class="container container-home">
+  <div class="row row-home">
+    <div  class="col-home col-md-6 col-lg-4" *ngFor="let book of list" (click)="onClick(book.id)">
+        <span>Író:</span><h6>{{book.writer}}</h6>
+        <span>Címe:</span><h6>{{book.title}}</h6>
+        <span>ISBN:</span><h6>{{book.isbn}}</h6>
+            <button type="button" routerLinkActive="active"  id="modalButton" name="modalButton" class="btn btn-info" data-toggle="modal" data-target="#exampleModalCenter">
+                részletek
+            </button>
+        </div>
+    </div>
+</div>

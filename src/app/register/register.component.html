@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 col-lg-6" style="margin: 40px auto 0">
+            <h1 class="display-5">Regisztráció</h1>
+            <form #regForm="ngForm" autocomplete="off" (submit)="onSubmit(regForm)">
+                <div class="form-group">
+                    <input type="email" name="email" #email="ngModel" [(ngModel)]="userservice.formData.email" class="form-control" placeholder="e-mail cím" required>
+                    <div *ngIf="email.invalid && email.touched" class="validation-error">Kötelező mező</div>
+                </div>
+                <div class="form-group">
+                    <input type="password" name="password" #password="ngModel" [(ngModel)]="userservice.formData.password" class="form-control" placeholder="jelszó" required>
+                    <div *ngIf="password.invalid && password.touched" class="validation-error">Kötelező mező</div>
+                </div>
+                <div class="form-group">
+                    <input type="password" name="confirmPassword" #confirmPassword="ngModel" [(ngModel)]="userservice.formData.confirmPassword" class="form-control" placeholder="jelszó ismét" required>
+                    <div *ngIf="confirmPassword.invalid && confirmPassword.touched" class="validation-error">Kötelező mező</div>
+                </div>
+                <div class="form-group">
+                    <button (click)="register(password.value, confirmPassword.value)" [disabled]="regForm.invalid" class="btn btn-lg btn-block btn-info">regisztrálok</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

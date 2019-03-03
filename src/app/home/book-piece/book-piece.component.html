@@ -1,0 +1,13 @@
+<button class="btn btn-info" routerLinkActive="active" routerLink="/home">vissza</button>
+<div class="container container-home"  >
+  <div class="row row-book-pice">
+    <div class="col-lg-10 col-book-piece" *ngFor="let book of list" >
+     <div *ngIf="parseId == book.id">
+         <h4>{{book.writer}}</h4>
+         <h5>{{book.title}}</h5>
+         <p class="book-desc">{{book.desc}}</p>
+     </div>
+    </div>
+  </div>
+</div>
+
